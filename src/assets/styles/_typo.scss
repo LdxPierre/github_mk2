@@ -1,0 +1,136 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+h6,
+fs-6 {
+  font-size: 1rem;
+}
+
+h5,
+fs-5 {
+  font-size: 1.5rem;
+}
+
+h4,
+fs-4 {
+  font-size: 2rem;
+}
+
+h3,
+fs-3 {
+  font-size: 2.5rem;
+}
+
+h2,
+fs-2 {
+  font-size: 3rem;
+}
+
+h1,
+fs-1 {
+  font-size: 3.5rem;
+}
+
+// Link theme
+a {
+  text-decoration: none;
+  color: var(--primary);
+
+  &:hover {
+    color: var(--primary-2);
+  }
+
+  &:active {
+    color: var(--primary-3);
+  }
+
+  &.link- {
+    &secondary {
+      color: var(--secondary);
+
+      &:hover {
+        color: var(--secondary-2);
+      }
+
+      &:active {
+        color: var(--secondary-3);
+      }
+
+    }
+
+    &dark {
+      color: #000;
+    }
+  }
+}
+
+// icon inside a link theme
+a.link-icon {
+
+  &-primary {
+
+    span:first-child,
+    i:first-child {
+      color: var(--primary);
+      font-size: 24px;
+      width: 24px;
+    }
+
+    &:hover {
+
+      span:first-child,
+      i:first-child {
+        color: var(--primary-2);
+      }
+    }
+
+    &:active {
+
+      span:first-child,
+      i:first-child {
+        color: var(--primary-3);
+      }
+    }
+  }
+}
+
+// small theme
+small {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+// text theme
+p,
+span,
+li,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.text-primary {
+    color: var(--primary);
+
+    &-2 {
+      color: var(--primary-2);
+    }
+
+    &-3 {
+      color: var(--primary-3);
+    }
+  }
+
+  &.text-dark {
+    color: #000;
+  }
+}

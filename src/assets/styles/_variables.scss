@@ -1,0 +1,18 @@
+$primary: #03ffc3;
+$primary-2: #02cc9c;
+$primary-3: #029975;
+
+$secondary: #FFFFFF;
+$secondary-2: #cccccc;
+$secondary-3: #999999;
+
+$background: #06283D;
+$background-2: #0b344e;
+$background-3: #0e4365;
+
+.bg- {
+  &primay {
+    background-color: $primary;
+    color: #000;
+  }
+}

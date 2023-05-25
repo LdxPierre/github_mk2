@@ -1,0 +1,21 @@
+:root {
+  --primary: #{v.$primary};
+  --primary-2: #{v.$primary-2};
+  --primary-3: #{v.$primary-3};
+  --secondary: #{v.$secondary};
+  --secondary-2: #{v.$secondary-2};
+  --secondary-3: #{v.$secondary-3};
+  --background: #{v.$background};
+  --background-2: #{v.$background-2};
+  --background-3: #{v.$background-3};
+  --text-color: #{v.$secondary};
+  --font-family: 'Inter', sans-serif;
+
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--secondary);
+  text-decoration: none;
+  background-color: var(--background);
+  background-size: cover;
+}

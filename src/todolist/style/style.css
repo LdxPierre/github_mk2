@@ -1,0 +1,132 @@
+body {
+    background-color: #16a085;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+}
+.container {
+    background-color: #ecf0f1;
+    padding: 0 20px;
+    margin: auto;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px black;
+    display: flex;
+    flex-direction: column;
+}
+.container h1 {
+    text-align: center;
+}
+form {
+    display: flex;
+    gap: 5px;
+}
+form input {
+    flex: 1;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+form input:hover {
+    box-shadow: 0 0 3px black;
+}
+form button {
+    background-color: #0a7034;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 0 15px;
+    height: 30px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #2ecc71;
+}
+.container ul {
+    list-style: none;
+    padding: 0;
+}
+.container ul li:hover {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px;
+}
+.container ul li {
+    display: flex;
+    margin: 5px 0;
+    padding: 10px;
+    gap: 5px;
+    cursor: pointer;
+}
+.container ul li input.editInput {
+    flex: 1;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 2px;
+}
+.container ul li p {
+    flex: 1;
+    margin: 0;
+    align-self: center;
+}
+.complete {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 1px;
+}
+.complete.validate {
+    background-image: url("https://www.svgrepo.com/show/336702/done-all.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: #2ecc71;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 1px;
+}
+.complete.validate.active {
+    animation-name: completeAnim;
+    animation-duration: 1s;
+}
+p.validate {
+    text-decoration: line-through;
+}
+.editTodo {
+    background-image: url("https://www.svgrepo.com/show/16691/edit.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.deleteTodo {
+    background-image: url("https://www.svgrepo.com/show/423791/delete-4.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    background-color: red;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+@keyframes completeAnim {
+    0% {
+        width: 100px;
+    }
+    50% {
+        width: 100px;
+    }
+    100% {
+        width: 30px;
+    }
+}

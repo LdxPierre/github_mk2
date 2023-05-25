@@ -1,0 +1,13 @@
+hr {
+  margin: 32px auto;
+  width: 75%;
+  border: 1px solid var(--primary);
+
+  &.hidden {
+    &-md {
+      @include md {
+        display: none;
+      }
+    }
+  }
+}

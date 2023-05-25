@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/2dac094cc5.js" crossorigin="anonymous"></script>
+    <title>New post</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <button class="toggleCanvas">
+                <i class="fa-solid fa-angles-right"></i>
+            </button>
+            <div class="canvas">
+                <a href="./index.html" class="logo">Logo</a>
+                <button class="canvasClose">
+                    <i class="fa-solid fa-angles-left"></i>
+                </button>
+                <ul class="link">
+                    <li><a href="./index.html">Posts</a></li>
+                    <li><a href="./form.html">New</a></li>
+                </ul>
+                <button class="darkMode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+            </div>
+        </header>
+        <div class="content">
+            <form>
+                <div class="formTitle">
+                    <label class="formLabel" for="title">Title</label>
+                    <input class="formInput" type="text" id="title" name="title" autofocus required />
+                </div>
+
+                <div class="formCategory">
+                    <label class="formLabel" for="category">Category</label>
+                    <input class="formInput" type="text" id="category" name="category" required></input>
+                </div>
+
+                <div class="formAuthor">
+                    <label class="formLabel" for="author">Author</label>
+                    <input class="formInput" type="text" id="author" name="author" required />
+                </div>
+
+                <div class="formAuthorImg">
+                    <label class="formLabel" for="author">Author's image</label>
+                    <input class="formInput" type="text" id="authorImg" name="authorImg" />
+                </div>
+
+                <div class="formContent">
+                    <label class="formLabel" for="body">Content</label>
+                    <textarea class='formInput' name="content" id="body" required></textarea>
+                </div>
+
+                <ul class="errors">
+                </ul>
+
+                <div class="formBtn">
+                    <a href="../index.html" class="btn btn-danger">
+                        Annuler
+                    </a>
+                    <input type="submit" id="submit" class="btn" value="Submit">
+                    </input>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <div class="footer">
+                <span class="blog2022">Blog 2022</span>
+                <div class="socialMedia">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <span class="qq">Quelque Chose</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
