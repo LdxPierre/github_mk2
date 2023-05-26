@@ -29,7 +29,7 @@ const config = {
 		},
 		blogTopbar: {
 			import: path.join(__dirname, "src/blog/assets/javascript/topbar.ts"),
-			filename: "blog[name].js",
+			filename: "blog/[name].js",
 		},
 		todolist: {
 			import: path.join(__dirname, "src/todolist/index.ts"),
