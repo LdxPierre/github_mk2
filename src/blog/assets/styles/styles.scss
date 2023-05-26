@@ -1,297 +1,260 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
 @import "variables";
-@import "media-queries";
 @import "reset";
-@import "classes";
 @import "base";
+@import "media-queries";
+@import "classes";
 
 .container {
-    background: var(--light);
-    min-height: 100vh;
-    display: grid;
-    grid:
-        "header" auto "content" 1fr "footer" auto / auto;
+	background: var(--light);
+	min-height: 100vh;
+	display: grid;
+	grid:
+		"header" auto
+		"content" 1fr
+		"footer" auto /
+		auto;
 }
 
 header {
-    padding: 10px;
-    grid-area: header;
-    background: var(--primary);
-    height: 50px;
+	padding: 10px;
+	grid-area: header;
+	background: var(--primary);
+	height: 50px;
+	//Navbar en large screen appelé en md & xl
+	.toggleCanvas {
+		display: none;
+	}
+	.canvas {
+		display: flex;
+		justify-content: space-between;
+		.canvasClose {
+			display: none;
+		}
+		.logo {
+			color: var(--text-light);
+			display: block;
+			margin: auto 0;
+			width: 50px;
+		}
+		ul {
+			display: flex;
+			gap: 10px;
+			li {
+				margin: auto;
+				a {
+					font-weight: 700;
+					color: var(--text-light);
+					padding: 5px 50px 5px 50px;
+					border: 2px solid var(--primary);
+					border-radius: 5px;
+					align-self: center;
+					&:hover {
+						border: 2px solid var(--light);
+					}
+					&:active {
+						border: 2px solid var(--success);
+						color: var(--success);
+					}
+				}
+			}
+		}
+	}
+	.darkMode {
+		height: 30px;
+		width: 30px;
+		padding: 5px;
+		margin-left: 20px;
+		background-color: var(--primary);
+		border: 0px;
+		border-radius: 5px;
+		color: var(--text-light);
+		cursor: pointer;
+		svg {
+			height: 100%;
+			width: 100%;
+		}
+		&:hover {
+			border: 2px solid var(--light);
+			color: var(--light);
+		}
+		&:active {
+			border: 2px solid var(--success);
+			color: var(--success);
+		}
+	}
 
-    //Navbar en large screen appelé en md & xl
-    .toggleCanvas {
-        display: none;
-    }
+	//navbar en small screen
+	@include sm {
+		//button pour afficher le canvas
+		.toggleCanvas {
+			display: block;
+			position: absolute;
+			left: 5px;
+			top: 5px;
+			width: 40px;
+			height: 40px;
+			background-color: var(--primary);
+			color: var(--text-light);
+			border: 0;
+			border-radius: 5px;
+			cursor: pointer;
+			svg {
+				height: 100%;
+				width: 100%;
+			}
+			&:hover {
+				border: 2px solid var(--light);
+				color: var(--light);
+			}
+			&:active {
+				border: 2px solid var(--success);
+				color: var(--success);
+			}
+		}
 
-    .canvas {
-        display: flex;
-        justify-content: space-between;
+		.canvas {
+			display: none;
+			&.show {
+				display: flex;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background-color: var(--secondary);
+				min-height: 100%;
+				width: 500px;
+				max-width: 90%;
+				padding: 10px;
+				flex-direction: column;
+				animation: canvasShow 0.5s;
+				.logo {
+					margin: auto;
+					height: 30px;
+				}
+				//button pour cacher le canvas
+				.canvasClose {
+					display: block;
+					position: absolute;
+					top: 5px;
+					right: 5px;
+					width: 40px;
+					height: 40px;
+					background-color: var(--secondary);
+					color: white;
+					border: 0px solid var(--light);
+					border-radius: 5px;
+					cursor: pointer;
+					svg {
+						height: 100%;
+						width: 100%;
+					}
+					&:hover {
+						border: 2px solid var(--light);
+						color: var(--light);
+					}
+					&:active {
+						border: 2px solid var(--success);
+						color: var(--success);
+					}
+				}
 
-        .canvasClose {
-            display: none;
-        }
+				ul {
+					margin-top: 20px;
+					gap: 5px;
+					flex: 1;
+					flex-direction: column;
+					li {
+						margin: 0;
+						a {
+							display: block;
+							background-color: var(--secondary);
+							width: 100%;
+							padding: 15px;
+							border: 2px solid var(--secondary);
+							border-radius: 5px;
+							&:hover {
+								border: 2px solid var(--light);
+							}
+							&:active {
+								border: 2px solid var(--success);
+								color: var(--text-light);
+							}
+						}
+					}
+				}
+				.darkMode {
+					background-color: var(--secondary);
+					margin: 10px;
+				}
+			}
+		}
+	}
 
-        .logo {
-            color: var(--text-light);
-            display: block;
-            margin: auto 0;
-            width: 50px;
-        }
-
-        ul {
-            display: flex;
-            gap: 10px;
-
-            li {
-                margin: auto;
-
-                a {
-                    font-weight: 700;
-                    color: var(--text-light);
-                    padding: 5px 50px 5px 50px;
-                    border: 2px solid var(--primary);
-                    border-radius: 5px;
-                    align-self: center;
-
-                    &:hover {
-                        border: 2px solid var(--light);
-                    }
-
-                    &:active {
-                        border: 2px solid var(--success);
-                        color: var(--success);
-                    }
-                }
-            }
-        }
-    }
-
-    .darkMode {
-        height: 30px;
-        width: 30px;
-        padding: 5px;
-        margin-left: 20px;
-        background-color: var(--primary);
-        border: 0px;
-        border-radius: 5px;
-        color: var(--text-light);
-        cursor: pointer;
-
-        svg {
-            height: 100%;
-            width: 100%;
-        }
-
-        &:hover {
-            border: 2px solid var(--light);
-            color: var(--light);
-        }
-
-        &:active {
-            border: 2px solid var(--success);
-            color: var(--success);
-        }
-    }
-
-    //navbar en small screen
-    @include sm {
-
-        //button pour afficher le canvas
-        .toggleCanvas {
-            display: block;
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: var(--text-light);
-            border: 0;
-            border-radius: 5px;
-            cursor: pointer;
-
-            svg {
-                height: 100%;
-                width: 100%;
-            }
-
-            &:hover {
-                border: 2px solid var(--light);
-                color: var(--light);
-            }
-
-            &:active {
-                border: 2px solid var(--success);
-                color: var(--success);
-            }
-        }
-
-        .canvas {
-            display: none;
-
-            &.show {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
-                background-color: var(--secondary);
-                min-height: 100%;
-                width: 500px;
-                max-width: 90%;
-                padding: 10px;
-                flex-direction: column;
-                animation: canvasShow 0.5s;
-
-                .logo {
-                    margin: auto;
-                    height: 30px;
-                }
-
-                //button pour cacher le canvas
-                .canvasClose {
-                    display: block;
-                    position: absolute;
-                    top: 5px;
-                    right: 5px;
-                    width: 40px;
-                    height: 40px;
-                    background-color: var(--secondary);
-                    color: white;
-                    border: 0px solid var(--light);
-                    border-radius: 5px;
-                    cursor: pointer;
-
-                    svg {
-                        height: 100%;
-                        width: 100%;
-                    }
-
-                    &:hover {
-                        border: 2px solid var(--light);
-                        color: var(--light);
-                    }
-
-                    &:active {
-                        border: 2px solid var(--success);
-                        color: var(--success);
-                    }
-                }
-
-                ul {
-                    margin-top: 20px;
-                    gap: 5px;
-                    flex: 1;
-                    flex-direction: column;
-
-                    li {
-                        margin: 0;
-
-                        a {
-                            display: block;
-                            background-color: var(--secondary);
-                            width: 100%;
-                            padding: 15px;
-                            border: 2px solid var(--secondary);
-                            border-radius: 5px;
-
-                            &:hover {
-                                border: 2px solid var(--light);
-                            }
-
-                            &:active {
-                                border: 2px solid var(--success);
-                                color: var(--text-light);
-                            }
-                        }
-                    }
-                }
-
-                .darkMode {
-                    background-color: var(--secondary);
-                    margin: 10px;
-                }
-            }
-        }
-    }
-
-    @keyframes canvasShow {
-        from {
-            left: -500px;
-        }
-
-        to {
-            left: 0px;
-        }
-    }
+	@keyframes canvasShow {
+		from {
+			left: -500px;
+		}
+		to {
+			left: 0px;
+		}
+	}
 }
 
 .content {
-    grid-area: content;
-    padding: 20px;
+	grid-area: content;
+	padding: 20px;
 }
 
 footer {
-    grid-area: footer;
-    background: var(--primary);
-    padding: 10px;
-
-    .footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        span {
-            width: 200px;
-        }
-
-        color: var(--text-light);
-
-        .socialMedia {
-            flex: 1;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-
-            a {
-                width: 40px;
-                height: 40px;
-                padding: 5px;
-                border: 2px solid var(--primary);
-                border-radius: 5px;
-                color: var(--text-light);
-
-                svg {
-                    height: 100%;
-                    width: 100%;
-                }
-
-                &:hover {
-                    border: 2px solid var(--light);
-                    color: var(--light);
-                }
-
-                &:active {
-                    border: 2px solid var(--success);
-                    color: var(--success);
-                }
-            }
-        }
-
-        span.qq {
-            text-align: right;
-        }
-    }
-
-    @include sm {
-        .footer {
-            flex-direction: column;
-            gap: 5px;
-            text-align: center;
-
-            span.qq {
-                text-align: center;
-            }
-        }
-    }
+	grid-area: footer;
+	background: var(--primary);
+	padding: 10px;
+	.footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		span {
+			width: 200px;
+		}
+		color: var(--text-light);
+		.socialMedia {
+			flex: 1;
+			display: flex;
+			gap: 10px;
+			justify-content: center;
+			a {
+				width: 40px;
+				height: 40px;
+				padding: 5px;
+				border: 2px solid var(--primary);
+				border-radius: 5px;
+				color: var(--text-light);
+				svg {
+					height: 100%;
+					width: 100%;
+				}
+				&:hover {
+					border: 2px solid var(--light);
+					color: var(--light);
+				}
+				&:active {
+					border: 2px solid var(--success);
+					color: var(--success);
+				}
+			}
+		}
+		span.qq {
+			text-align: right;
+		}
+	}
+	@include sm {
+		.footer {
+			flex-direction: column;
+			gap: 5px;
+			text-align: center;
+			span.qq {
+				text-align: center;
+			}
+		}
+	}
 }

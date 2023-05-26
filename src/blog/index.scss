@@ -4,19 +4,17 @@
 	display: flex;
 	justify-content: center;
 	gap: 2rem;
-
+	max-width: 100%;
 	@include sm {
 		flex-direction: column;
 		justify-content: start;
 	}
 }
-
 .filters {
 	display: flex;
 	flex-direction: column;
 	width: 20rem;
 	gap: 1rem;
-
 	.sortDate,
 	.filterCategories {
 		display: flex;
@@ -25,74 +23,63 @@
 		border: 1px solid black;
 		border-radius: 5px;
 		cursor: pointer;
-
 		&:hover {
 			background-color: var(--primary);
 			color: white;
 			transition: background-color 0.5s;
 		}
-
 		&:active {
 			background-color: var(--secondary);
 		}
-
 		.ico {
 			height: 20px;
 			width: 20px;
-
-			svg {
+			svg,
+			i {
+				font-size: 20px;
 				height: 100%;
 				width: 100%;
 			}
 		}
-
 		&.on {
 			background-color: var(--primary);
 			color: var(--light);
-
-			.ico>svg {
+			.ico > svg,
+			i {
 				transform: rotate(180deg);
 				transition: transform 0.5s;
 			}
 		}
-
-		&.off>.ico>svg {
+		&.off > .ico > svg {
 			transform: rotate(0);
 			transition: transform 0.5s;
 		}
 	}
-
 	ul {
 		display: none;
-
 		&.show {
 			display: block;
 		}
-
 		li {
 			margin: 0 0 0.5rem 2rem;
 			padding: 0.5rem;
 			border: 1px solid black;
 			border-radius: 5px;
 			cursor: pointer;
-
 			&:hover {
 				background-color: var(--primary);
 				color: white;
 				transition: background-color 0.5s;
 			}
-
 			&:active {
 				background-color: var(--secondary);
 			}
-
 			&.filter-select {
 				background-color: var(--primary);
 				color: white;
 			}
 		}
 	}
-
 	.currentFilter {
 		margin: 0 0 0.5rem 2rem;
 		padding: 0.5rem;
@@ -101,33 +88,27 @@
 		background-color: var(--primary);
 		color: white;
 		cursor: pointer;
-
 		&:hover {
 			background-color: var(--primary);
 			color: white;
 			transition: background-color 0.5s;
 		}
-
 		&:active {
 			background-color: var(--secondary);
 		}
 	}
-
 	.filtersReset {
 		display: block;
 		border: 1px solid black;
 		text-align: center;
-
 		&.hidden {
 			display: none;
 		}
 	}
-
 	@include sm {
 		width: 100%;
 	}
 }
-
 .articles {
 	display: flex;
 	flex-direction: column;
@@ -141,12 +122,10 @@
 		width: 50px;
 		color: var(--primary);
 		animation: rotation 1s infinite linear;
-
 		@keyframes rotation {
 			from {
 				transform: rotate(0deg);
 			}
-
 			to {
 				transform: rotate(360deg);
 			}
@@ -163,71 +142,53 @@
 			text-align: center;
 			margin-bottom: 0.5rem;
 		}
-
 		.articleCategory {
 			text-align: center;
 			font-weight: 300;
 			font-size: 1.6rem;
 			font-style: italic;
 		}
-
 		.articleContent {
 			text-align: justify;
 			white-space: pre-line;
 			margin: 2rem 0;
 		}
-
 		.articleInfos {
 			display: grid;
-			grid-template-columns: 100px auto 100px 100px 100px;
-			grid-template-rows: 15px auto;
+			grid-template-columns: 100px auto 100px 100px;
+			grid-template-rows: auto auto;
 			gap: 5px 10px;
-
+			@include sm {
+				grid-template-columns: 100px auto;
+			}
 			.articleAuthorImg {
 				grid-row: 1 / span 3;
 				max-width: 100px;
 				border-radius: 50px;
 			}
-
 			.articleDate {
 				grid-column: 2 / span 3;
 				grid-row: 1;
 			}
-
 			.articleAuthor {
 				grid-column: 2 / span 3;
 				grid-row: 2;
 			}
-
 			.btn-delete {
 				grid-column: 3;
 				grid-row: 3;
-
 				@include sm {
 					grid-column: 1 / span 5;
 					grid-row: 4;
 					height: 40px;
 				}
 			}
-
 			.btn-edit {
 				grid-column: 4;
 				grid-row: 3;
-
 				@include sm {
 					grid-column: 1 / span 5;
 					grid-row: 5;
-					height: 40px;
-				}
-			}
-
-			.btn-read {
-				grid-column: 5;
-				grid-row: 3;
-
-				@include sm {
-					grid-column: 1 / span 5;
-					grid-row: 6;
 					height: 40px;
 				}
 			}

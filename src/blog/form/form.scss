@@ -1,93 +1,77 @@
 @import "../assets/styles/styles.scss";
 
 form {
-    display: grid;
-    gap: 10px;
-    max-width: 1000px;
-    margin: auto;
-
-    .formInput {
-        padding: 5px;
-        margin-top: 5px;
-        width: 100%;
-        border: 1px solid grey;
-        border-radius: 5px;
-    }
-
-    .invalid {
-        border: 1px solid var(--danger);
-    }
-
-    .formTitle {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .formCategory {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .formAuthor {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .formAuthorImg {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .formContent {
-        grid-column: 1 / span 2;
-
-        textarea {
-            height: 200px;
-            resize: none;
-        }
-    }
-
-    .errors {
-        grid-column: 1 / span 2;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--danger);
-    }
-
-    .formBtn {
-        display: flex;
-        gap: 5px;
-    }
-
-    @include sm {
-        .formCategory {
-            grid-row: 2;
-            grid-column: 1;
-        }
-
-        .formAuthor {
-            grid-row: 3;
-            grid-column: 1;
-        }
-
-        .formAuthorImg {
-            grid-row: 4;
-            grid-column: 1;
-        }
-
-        .formContent {
-            grid-row: 5;
-            grid-column: 1;
-        }
-
-        .formBtn {
-            grid-row: 6;
-            grid-column: 1;
-        }
-
-        .errors {
-            grid-row: 7;
-            grid-column: 1;
-        }
-    }
+	display: grid;
+	gap: 10px;
+	max-width: 1000px;
+	margin: auto;
+	.formInput {
+		padding: 5px;
+		margin-top: 5px;
+		width: 100%;
+		border: 1px solid grey;
+		border-radius: 5px;
+	}
+	.invalid {
+		border: 1px solid var(--danger);
+	}
+	.formTitle {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.formCategory {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.formAuthor {
+		grid-column: 1;
+		grid-row: 2;
+	}
+	.formAuthorImg {
+		grid-column: 2;
+		grid-row: 2;
+	}
+	.formContent {
+		grid-column: 1 / span 2;
+		textarea {
+			height: 200px;
+			resize: none;
+		}
+	}
+	.errors {
+		grid-column: 1 / span 2;
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--danger);
+	}
+	.formBtn {
+		display: flex;
+		gap: 5px;
+	}
+	@include sm {
+		.formCategory {
+			grid-row: 2;
+			grid-column: 1;
+		}
+		.formAuthor {
+			grid-row: 3;
+			grid-column: 1;
+		}
+		.formAuthorImg {
+			grid-row: 4;
+			grid-column: 1;
+		}
+		.formContent {
+			grid-row: 5;
+			grid-column: 1;
+		}
+		.formBtn {
+			grid-row: 6;
+			grid-column: 1;
+		}
+		.errors {
+			grid-row: 7;
+			grid-column: 1;
+		}
+	}
 }
