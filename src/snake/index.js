@@ -19,7 +19,7 @@ let start = false;
 let score = 0;
 let timer = new Date();
 let timerInterval;
-let speed = 600;
+let speed = 500;
 
 //dessine la map
 const drawMap = () => {
@@ -62,7 +62,7 @@ const moveSnake = () => {
     snake.pop();
   } else {
     score++;
-    speed = speed - (speed / 100) * 10;
+    speed = speed * 0.95;
     scoreNode.innerHTML = `score: ${score}`;
     apple = newApple();
   }
@@ -115,6 +115,7 @@ const reset = () => {
   timer.setTime(0);
   timerNode.innerHTML = "00:00";
   timerInterval = null;
+  speed = 500;
 };
 
 //condition de défaite
